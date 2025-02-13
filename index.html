@@ -568,9 +568,24 @@
 @media (max-width: 480px) {
   #question-text { font-size: 20px; }
 }
+#rotate-message {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.8);
+    color: white;
+    font-size: 24px;
+    text-align: center;
+    line-height: 100vh;
+    z-index: 9999;
+  }
   </style>
 </head>
 <body>
+	<div id="rotate-message">Please rotate your device to portrait mode.</div>
   <!-- Éléments audio -->
   <audio id="checkbox-sound" src="audio/select.mp3" preload="auto"></audio>
   <audio id="start-sound" src="audio/start.mp3" preload="auto"></audio>
@@ -852,14 +867,21 @@
     }
     
     restartBtn.addEventListener("click", () => { window.location.reload(); });
-					       
-document.getElementById("start-btn").addEventListener("click", () => {
-  if (screen.orientation && screen.orientation.lock) {
-    screen.orientation.lock('portrait').catch((error) => {
-      console.error("Orientation lock failed:", error);
-    });
+	  
+	   function checkOrientation() {
+    if (window.innerHeight < window.innerWidth) {
+      // Landscape mode: show message
+      document.getElementById("rotate-message").style.display = "block";
+    } else {
+      // Portrait mode: hide message
+      document.getElementById("rotate-message").style.display = "none";
+    }
   }
-});
+  window.addEventListener("orientationchange", checkOrientation);
+  window.addEventListener("resize", checkOrientation);
+  checkOrientation();
+	  }
+	  }
   </script>
 </body>
 </html>
