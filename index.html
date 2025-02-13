@@ -768,10 +768,6 @@
             <img src="images/ken.png" alt="Décoration droite" class="decor-right">
           </div>
         `;
-        let ryuGif = document.querySelector('.decor-left');
-        let kenGif = document.querySelector('.decor-right');
-        if (ryuGif) { let originalSrc = ryuGif.src.split('?')[0]; ryuGif.src = originalSrc + '?t=' + new Date().getTime(); }
-        if (kenGif) { let originalSrc = kenGif.src.split('?')[0]; kenGif.src = originalSrc + '?t=' + new Date().getTime(); }
       } else {
         const selectedSound = (Math.random() < 0.5) ? incorrectSound : incorrectSound2;
         selectedSound.currentTime = 0;
@@ -785,10 +781,6 @@
           <div class="incorrect-answer-header">Réponse :</div>
           <div class="incorrect-answer-text">${data.correctAnswers.join(", ")}</div>
         `;
-        let ryu2Gif = document.querySelector('.decor-leftX');
-        let ken2Gif = document.querySelector('.decor-rightX');
-        if (ryu2Gif) { let originalSrc = ryu2Gif.src.split('?')[0]; ryu2Gif.src = originalSrc + '?t=' + new Date().getTime(); }
-        if (ken2Gif) { let originalSrc = ken2Gif.src.split('?')[0]; ken2Gif.src = originalSrc + '?t=' + new Date().getTime(); }
       }
       const delayTime = isCorrect ? 2000 : 3000;
       setTimeout(() => {
