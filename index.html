@@ -853,11 +853,13 @@
     
     restartBtn.addEventListener("click", () => { window.location.reload(); });
 					       
-    if (screen.orientation && screen.orientation.lock) {
-  screen.orientation.lock('portrait').catch(function(error) {
-    console.error("Orientation lock failed:", error);
-  });
-    }
+document.getElementById("start-btn").addEventListener("click", () => {
+  if (screen.orientation && screen.orientation.lock) {
+    screen.orientation.lock('portrait').catch((error) => {
+      console.error("Orientation lock failed:", error);
+    });
+  }
+});
   </script>
 </body>
 </html>
