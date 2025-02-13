@@ -59,14 +59,14 @@
   transform-origin: center;
 }
 	 @keyframes levitateLeft {
-        0%   { transform: translate(60px, 0px); }
-        50%  { transform: translate(60px, -10px); } /* monte de 10px */
-        100% { transform: translate(60px, 0px); }
+        0%   { transform: translate(60px, -10px); }
+        50%  { transform: translate(60px, -20px); } /* monte de 10px */
+        100% { transform: translate(60px, -10px); }
       }
       @keyframes levitateRight {
-        0%   { transform: translate(-60px, 0px); }
-        50%  { transform: translate(-60px, -10px); } /* monte de 10px */
-        100% { transform: translate(-60px, 0px); }
+        0%   { transform: translate(-60px, -10px); }
+        50%  { transform: translate(-60px, -20px); } /* monte de 10px */
+        100% { transform: translate(-60px, -10px); }
       }
     @keyframes shake {
       0% { transform: translate(0, 0); }
@@ -128,7 +128,7 @@
 .pikachu {
   display: block;
   margin: 20px auto;
-  transform: translateY(5px)!important;
+  transform: translateY(-5px)!important;
   width: 270px !important;
   height: 192px !important;
 
@@ -238,7 +238,7 @@
       text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000, 3px 3px 5px black;
       text-align: left;
       margin: 0;
-      margin-bottom: 10px;
+      margin-bottom: 20px;
       margin-left: 20px;
       padding-left: 20px;
     }
@@ -316,12 +316,13 @@
     .correct-container .result-image.correct {
       animation: popAnimation 0.5s ease-out;
       width: 80px;
-      margin-bottom: 25px;
+      margin-bottom: 20px;
+	  margin-top: -10px;
       z-index: 1;
     }
     .result-image.incorrect {
       width: 80px;
-      margin-top: 25px;
+      margin-top: -10px;
       animation: shake 0.5s ease-in-out;
     }
     /* Page finale */
@@ -402,14 +403,14 @@
 
 }
 @keyframes levitateLeftX {
-  0%   { transform: translate(70px, 3px); }
-  50%  { transform: translate(70px, 13px); }
-  100% { transform: translate(70px, 3px); }
+  0%   { transform: translate(70px, -13px); }
+  50%  { transform: translate(70px, 3px); }
+  100% { transform: translate(70px, -13px); }
 }
 @keyframes levitateRightX {
-  0%   { transform: translate(-70px, 3px); }
-  50%  { transform: translate(-70px, 13px); }
-  100% { transform: translate(-70px, 3px); }
+  0%   { transform: translate(-70px, -13px); }
+  50%  { transform: translate(-70px, 3px); }
+  100% { transform: translate(-70px, -13px); }
 }
     /* Media Query pour mobile */
     @media (max-width: 480px) {
@@ -538,27 +539,27 @@
       }
  @media (max-width: 480px) {
  @keyframes levitateLeft {
-        0%   { transform: translate(20px, 0px); }
-        50%  { transform: translate(20px, -15px); } /* monte de 10px */
-        100% { transform: translate(20px, 0px); }
+        0%   { transform: translate(20px, -10px); }
+        50%  { transform: translate(20px, -20px); } /* monte de 10px */
+        100% { transform: translate(20px, -10px); }
       }
       @keyframes levitateRight {
-        0%   { transform: translate(-20px, 0px); }
-        50%  { transform: translate(-20px, -15px); } /* monte de 10px */
-        100% { transform: translate(-20px, 0px); }
+        0%   { transform: translate(-20px, -10px); }
+        50%  { transform: translate(-20px, -20px); } /* monte de 10px */
+        100% { transform: translate(-20px, -10px); }
       }
 }
  @media (max-width: 480px) {
 @keyframes levitateLeftX {
-  0%   { transform: translate(30px, 3px); }
-  50%  { transform: translate(30px, 13px); }
-  100% { transform: translate(30px, 3px); }
+  0%   { transform: translate(30px, -13px); }
+  50%  { transform: translate(30px, 3px); }
+  100% { transform: translate(30px, -13px); }
 }
  @media (max-width: 480px) {
 @keyframes levitateRightX {
-  0%   { transform: translate(-30px, 3px); }
-  50%  { transform: translate(-30px, 13px); }
-  100% { transform: translate(-30px, 3px); }
+  0%   { transform: translate(-30px, -13px); }
+  50%  { transform: translate(-30px, 3px); }
+  100% { transform: translate(-30px, -13px); }
 }
 }
 .centipod {
