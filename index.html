@@ -299,7 +299,7 @@
       margin-top: 5px;
     }
     .incorrect-answer-header {
-      margin-top: -10px;
+      margin-top: 0px;
       font-weight: bold;
       font-size: 18px;
       font-family: 'Arial Black', Arial, sans-serif;
@@ -568,24 +568,9 @@
 @media (max-width: 480px) {
   #question-text { font-size: 20px; }
 }
-#rotate-message {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0,0,0,0.8);
-    color: white;
-    font-size: 24px;
-    text-align: center;
-    line-height: 100vh;
-    z-index: 9999;
-  }
   </style>
 </head>
 <body>
-	<div id="rotate-message">Veuillez faire pivoter votre appareil en mode portrait.</div>
   <!-- Éléments audio -->
   <audio id="checkbox-sound" src="audio/select.mp3" preload="auto"></audio>
   <audio id="start-sound" src="audio/start.mp3" preload="auto"></audio>
@@ -860,18 +845,6 @@
     
     restartBtn.addEventListener("click", () => { window.location.reload(); });
 	  
-	   function checkOrientation() {
-    if (window.innerHeight < window.innerWidth) {
-      // Landscape mode: show message
-      document.getElementById("rotate-message").style.display = "block";
-    } else {
-      // Portrait mode: hide message
-      document.getElementById("rotate-message").style.display = "none";
-    }
-  }
-  window.addEventListener("orientationchange", checkOrientation);
-  window.addEventListener("resize", checkOrientation);
-  checkOrientation();
   </script>
 </body>
 </html>
