@@ -849,13 +849,10 @@
 document.addEventListener("DOMContentLoaded", function() {
   var decorImage = document.querySelector('.pikachu');
   if (decorImage) {
-    var decorGifs = ["images/decor1.gif", "images/decor2.gif"];
-    var randomIndex = Math.floor(Math.random() * decorGifs.length);
-    var randomGif = decorGifs[randomIndex];
-    decorImage.src = randomGif + '?t=' + new Date().getTime(); // Ajout du paramètre
+    decorImage.src = "images/decor1.gif?t=" + new Date().getTime(); // Toujours decor1.gif avec cache busting
     decorImage.style.visibility = 'visible';
   }
-});	  
+});
   </script>
 </body>
 </html>
