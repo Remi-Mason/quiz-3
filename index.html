@@ -846,7 +846,16 @@
     }
     
     restartBtn.addEventListener("click", () => { window.location.reload(); });
-	  
+document.addEventListener("DOMContentLoaded", function() {
+  var decorImage = document.querySelector('.pikachu');
+  if (decorImage) {
+    var decorGifs = ["images/decor1.gif", "images/decor2.gif"];
+    var randomIndex = Math.floor(Math.random() * decorGifs.length);
+    var randomGif = decorGifs[randomIndex];
+    decorImage.src = randomGif + '?t=' + new Date().getTime(); // Ajout du paramètre
+    decorImage.style.visibility = 'visible';
+  }
+});	  
   </script>
 </body>
 </html>
